@@ -16,11 +16,6 @@ const io = new Server(server, {
   connectionStateRecovery: {}
 })
 
-const db = createClient({
-  url: 'libsql://large-mimic-chuobejarano.turso.io',
-  authToken: process.env.DB_TOKEN
-})
-
 await db.execute(`
   CREATE TABLE IF NOT EXISTS messages (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
