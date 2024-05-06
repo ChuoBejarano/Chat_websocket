@@ -16,14 +16,6 @@ const io = new Server(server, {
   connectionStateRecovery: {}
 })
 
-await db.execute(`
-  CREATE TABLE IF NOT EXISTS messages (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    content TEXT,
-    user TEXT
-  )
-`)
-
 io.on('connection', async (socket) => {
   console.log('Usuario conectado')
 
